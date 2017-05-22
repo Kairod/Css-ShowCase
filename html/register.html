@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Free CSS database">
+        <meta name="keywords" content="CSS">
+        <meta name="author" content="Pierre Laloy">
+        <meta name="author" content="Nicolas Kerkar">
+
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../css/register.css">
+
+        <link rel="icon" href="http://www.scottace.comng">
+        <title>CSS ShowCase</title>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header class = "bruceBanner">
+  		        <h1><a href="../index.html">CSS Showcase</a></h1>
+  	    </header>
+
+        <!-- ARTICLE -->
+        <section class="register">
+            <div class="register--contener">
+                <h2 class="register--contener--title">Register</h2>
+    			<form action="../htbin/register.py" method="post">
+                    <input class="register--contener--field" id="lastname" type="text" name="lastname" value="" placeholder="Lastname *">
+    				<input class="register--contener--field" id="firstname" type="text" name="firstname" value="" placeholder="Firstname *">
+    				<input class="register--contener--field" id="birthdate" type="text" name="birthdate" value="" placeholder="Date (DD/MM/YYYY)">
+    				<input class="register--contener--field" id="username" type="text" name="username" value="" placeholder="Username *">
+    				<input class="register--contener--field" id="userpwd" type="password" name="userpwd" value="" placeholder="Passeword *">
+    				<input class="register--contener--field" id="useremail" type="text" name="useremail" value="" placeholder="E-mail *">
+
+                    <p class="register--contener--p">* sont obligatoire</p>
+
+                    <input class="register--contener--button register--contener--button--lock" id="submit-button" type="submit" name="submit">
+
+                </form>
+
+            </div>
+		</section>
+
+        <script type="text/javascript" src="../js/register.js"></script>
+    </body>
+</html>

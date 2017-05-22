@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Showcase</title>
+    <link rel="icon" href="http://www.scottace.com/img/css3-icon.png">
+    <link rel="stylesheet" href="../css/tchat.css">
+  </head>
+
+  <body>
+      <!-- Header -->
+      <header class = "bruceBanner">
+		<h1><a href="../index.html">CSS Showcase</a></h1>		<!--mettre le lien de l'index-->
+	  </header>
+
+
+      <div id="chatbox">
+        <section id="chatbox-content">
+            <!-- Text messages -->
+        </section>
+
+        <div id="chatbox--emoji-contener">
+            <ul id="chatbox--emoji-contener--emoji">
+              <li class="emoji">😊</li>
+              <li class="emoji">😎</li>
+              <li class="emoji">😉</li>
+              <li class="emoji">😍</li>
+              <li class="emoji">😆</li>
+              <li class="emoji">😘</li>
+              <li class="emoji">😑</li>
+              <li class="emoji">😥</li>
+              <li class="emoji">👍</li>
+              <li class="emoji">❤️</li>
+            </ul>
+        </div>
+
+        <form id="chatbox-input">
+          <textarea id="message-area" name="msg" rows="1" cols="80" placeholder="Entrer votre message ..."></textarea>
+          <button id="send-button" type="submit" name="button">SEND</button>
+        </form>
+      </div>
+
+    <!-- JS -->
+    <script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../js/tchat.js"></script>
+  </body>
+</html>

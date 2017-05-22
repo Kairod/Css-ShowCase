@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr" >
+    <head>
+        <title>CSS DOC</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="../css/doc.css">
+        <link rel="stylesheet" type="text/css" href="../css/prism.css">
+        <!--Coloration syntaxique du code-->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600" rel="stylesheet">
+        <link rel="icon" href="http://www.scottace.com/img/css3-icon.png">
+        <script src="../js/jquery-3.1.1.min.js"></script>
+    </head>
+    <body>
+        <header class = "bruceBanner">
+            <h1><a href="../index.html">CSS Showcase</a></h1>
+        </header>
+        <input type = "checkbox" id = "sideBarToggler" name = "check">
+        <div class = "page-wrap">
+            <label for = "sideBarToggler" class = "toogle">☰</label>
+            <main class = "content">
+                <section class = "section">
+                    <h2 class = "hidden">Documentation</h2>
+                    <div id = "article-1" class = "hidden">.</div>
+                    <article>
+                        <h2>Box-Shadow</h2>
+                        <table class="property">
+                            <tbody>
+                                <tr>
+                                    <th>valeur:</th>
+                                    <td>aucune</td>
+                                </tr>
+                                <tr>
+                                    <th>par defaut:</th>
+                                    <td>Ø</td>
+                                </tr>
+                                <tr>
+                                    <th>s'applique:</th>
+                                    <td>tous les élements</td>
+                                </tr>
+                                <tr>
+                                    <th>hérite:</th>
+                                    <td>non</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            La propriété box-shadow décrit les ombres appliquées à la boîte avec une liste d'ombres séparées par des virgules. Elle permet de projeter une ombre depuis un élément. Si une border-radius est définie sur l'élément avec l'ombre, la boîte de l'ombre prendra les mêmes arrondis. L'ordre des couches (z order) pour plusieurs ombres sera le même que pour les ombres texte (la première ombre est sur le dessus).
+                        </p>
+                        <h3>Syntaxe</h3>
+                        <pre>
+							<code class="language-css">
+
+
+/* offset-x | offset-y | color */
+box-shadow: 60px -16px teal;
+
+
+/* offset-x | offset-y | blur-radius | color*/
+box-shadow: 10px 5px 5px black;
+
+/* offset-x | offset-y | blur-radius | spread-radius | color */
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+/* inset | offset-x | offset-y | color */
+box-shadow: inset 5em 1em gold;
+
+/* Une liste d'ombres, séparées par des virgules */
+box-shadow: 3px 3px red, -1em 0 0.4em olive;
+
+/* Mots-clés globaux */
+box-shadow: inherit;
+box-shadow: initial;
+box-shadow: unset;
+						</code>
+					</pre>
+                        <h3>Valeurs</h3>
+                        <p>
+                            <em>inset :</em><br/>
+                            Si la valeur n'est pas définie (le cas par défaut), l'ombre sera une ombre portée (comme si la boîte était élevée au-dessus du contenu).
+                            La présence du mot-clé inset modifie l'ombre afin qu'elle soit tournée vers l'intérieur du cadre (comme si le contenu était enfoncé dans la boîte). Les ombres tournées vers l'intérieur sont dessinées à l'intérieur de la bordure (même les transparentes), au-dessus de l'arrière-plan mais sous le contenu.<br/>
+                            <br/><em>offset-x offset-y:</em><br/>
+                            Deux valeurs de longueur (length qui permettent de définir le décalage de l'ombre. offset-x: définit la distance horizontale du décalage et les valeurs négatives placeront l'ombre à gauche de l'élément. offset-y: définit la distance verticale et les distances négatives placent l'ombre au-dessus de l'élément (cf. length: pour les différentes unités possibles).
+                            Si les deux valeurs sont 0, l'ombre est placée derrière l'élément (et peut générer un effet de flou si blur-radius et/ou spread-radius est utilisé).<br/><br/>
+                            <em>blur-radius:</em><br/>
+                            Une troisième valeur de longueur (length). Plus cette valeur sera grande, plus le flou de l'ombre sera diffus : l'ombre sera donc plus étalée et plus légère. Les valeurs négatives ne sont pas autorisées. Si la valeur n'est pas définie, sa valeur par défaut est 0 (le côté de l'ombre est rectiligne).<br/>
+                            <br/><em>spread-radius</em><br/>
+                            Une quatrième valeur de longueur (length). Les valeurs positives étaleront l'ombre et les valeurs négatives rétréciront l'ombre. Si elle n'est pas définie, la valeur par défaut est 0 (l'ombre aura la même taille que l'élément).
+                            <br/><br/><em>color:</em><br/>
+                            Une valeur de couleur (color). Si la valeur n'est pas définie, la couleur utilisée dépend du navigateur ce sera généralement la propriété color mais Safari affiche une ombre transparente.<br/>
+                        </p>
+                        <h3>Exemple</h3>
+                        <h4>CSS</h4>
+                        <pre>
+						<code class="language-css">
+p {
+  height: 5em;
+  width: 300px;
+  background-color: rgba(128,128,128,0.1);
+}
+.ombre_droite_haut {
+  box-shadow: 60px -16px teal; /* la valeur négative décale à droite */
+}
+
+.ombre_interieure {
+  box-shadow: inset 5em 1em gold;
+  /* le mot-clé inset renverse l'ombre à l'intérieur */
+}
+
+.ombres_multiples_diffuses {
+  box-shadow: inset 0 0 1em gold, 0 0 2em red;
+  /* deux ombres dans la liste et des rayons de flou pour chacune */
+}
+						</code>
+					</pre>
+                        <h4>HTML</h4>
+                        <pre>
+						<code class="language-HTML">
+&lt;p class=&quot;ombre_droite_haut&quot;&gt;Déportée dans l'autre sens&lt;/p&gt;
+
+&lt;p class=&quot;ombre_interieure&quot;&gt;L'ombre est dans le contenu !&lt;/p&gt;
+
+&lt;p class=&quot;ombres_multiples_diffuses&quot;&gt;Du rouge dehors et du doré dedans&lt;/p&gt;
+						</code>
+					</pre>
+                        <h4>RÉSULTAT</h4>
+                        <p class="ombre_droite_haut p-example">Déportée dans l'autre sens</p>
+                        <p class="ombre_interieure p-example">L'ombre est dans le contenu !</p>
+                        <p class="ombres_multiples_diffuses p-example">Du rouge dehors et du doré dedans</p>
+                        <div class="up">
+                            <a  href="#article-1"> ⤒ </a>
+                        </div>
+                    </article>
+                    <div id = "article-2"><p class = "hidden">.</p></div>
+                    <article>
+                        <h2>Margin</h2>
+                        <table class="property">
+                            <tbody>
+                                <tr>
+                                    <th>valeur:</th>
+                                    <td>aucune</td>
+                                </tr>
+                                <tr>
+                                    <th>par defaut:</th>
+                                    <td>Ø</td>
+                                </tr>
+                                <tr>
+                                    <th>s'applique:</th>
+                                    <td>tous les élements</td>
+                                </tr>
+                                <tr>
+                                    <th>hérite:</th>
+                                    <td>non</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            La propriété margin permet de définir la taille des marges sur les quatre côtés de l'élément. C'est une propriété raccourcie qui permet de manipuler les autres propriétés de marges : margin-top, margin-right, margin-bottom and margin-left.
+                            Il est possible d'utiliser des valeurs négatives pour chacun des côtés.
+                        </p>
+                        <h3>Syntaxe</h3>
+                        <pre>
+							<code class="language-css">
+
+
+/* La propriété s'applique aux quatre côtés */
+margin: 1em;
+
+/* vertical | horizontal */
+margin: 5% auto;
+
+/* haut | horizontal | bas */
+margin: 1em auto 2em;
+
+/* haut | droit | bas | gauche */
+margin: 2px 1em 0 auto;
+
+/* Valeurs globales */
+margin: inherit;
+margin: initial;
+margin: unset;
+							</code>
+						</pre>
+                        <h3>Valeurs</h3>
+                        <p>
+                            Cette propriété peut accepter une, deux, trois ou quatre valeurs avec les types suivants :<br/><br/><em>&lt;length&gt;</em><br/>    La marge est définie avec une valeur absolue. On peut utiliser des valeurs négatives. Pour les différentes unités possibles.<br/><br/><em>&lt;percentage&gt;</em><br/>    Une valeur relative, exprimée en pourcentage (type &lt;percentage&gt;, à la largeur du bloc englobant. On peut utiliser des valeurs négatives.<br/><br/><em>auto</em><br/>    auto est remplacé par une valeur adaptée (il peut être utilisé pour centrer les blocs, par exemple, div { width:50%;  margin:0 auto; } permet de centrer un conteneur div horizontalement).
+                        </p>
+                        <h3>Example</h3>
+                        <h4>CSS</h4>
+                        <pre>
+							<code class="language-css">
+.ex1 {
+  margin: auto;
+  background: gold;
+  width: 66%;
+}
+.ex2 {
+  margin: 20px 0px 0 -20px;
+  background: gold;
+  width: 66%;
+}
+							</code>
+						</pre>
+                        <h4>HTML</h4>
+                        <pre>
+							<code class="language-html">
+&lt;div class=&quot;ex1&quot;&gt;
+  margin:     auto;
+  background: gold;
+  width:      66%;
+&lt;/div&gt;
+&lt;div class=&quot;ex2&quot;&gt;
+  margin:     20px 0px 0px -20px;
+  background: gold;
+  width:      66%;
+&lt;/div&gt;
+							</code>
+						</pre>
+                        <h4>Résultat</h4>
+                        <div class="ex1">
+                            margin:     auto;
+                            background: gold;
+                            width:      66%;
+                        </div>
+                        <div class="ex2">
+                            margin:     20px 0px 0px -20px;
+                            background: gold;
+                            width:      66%;
+                        </div>
+                        <div class="up">
+                            <a  href="#article-2"> ⤒ </a>
+                        </div>
+                    </article>
+                    <div id = "article-3"><p class = "hidden">.</p></div>
+                    <article>
+                        <h2>Sélecteurs de type</h2>
+                        <table class="property">
+                            <tbody>
+                                <tr>
+                                    <th>élément</th>
+                                    <td>{ style propriétés }</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            Les sélecteurs de type CSS ciblent des éléments en fonction du nom de leur nœud. Ainsi, lorsqu'un sélecteur de type est utilisé seul, il ciblera tous les éléments de ce type (autrement dit tous les nœuds avec ce nom) contenus dans le document.
+                        </p>
+                        <h4>Example</h4>
+                        <pre>
+						<code class="language-css">
+span {
+  background-color: DodgerBlue;
+  color: #ffffff;
+}
+						</code>
+					</pre>
+                        <h3>Résultat</h3>
+                        <span class ="span-example">
+                        Voici un élément span avec du texte.
+                        </span>
+                        <div class="up">
+                            <a  href="#article-3"> ⤒ </a>
+                        </div>
+                    </article>
+                </section>
+            </main>
+            <aside class="sideBar">
+                <nav>
+                    <ul>
+                        <li><a href="#article-1">Box Shadow</a></li>
+                        <li><a href="#article-2">Margin</a></li>
+                        <li><a href="#article-3">Selecteur</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+        <footer class="footer">
+            <div>
+                <figure>
+                    <figcaption>pour aller plus loin : </figcaption>
+                    <a href="https://developer.mozilla.org/fr/"><img src="../resources/moz.jpg" alt="Smiley face" height="30" width="30"></a>
+                    <a href="https://www.w3schools.com/"><img src="../resources/school.png" alt="Smiley face" height="30" width="30"></a>
+                    <a href="https://openclassrooms.com/"><img src="../resources/open.png" alt="Smiley face" height="30" width="30"></a>
+                </figure>
+            </div>
+            <div class="footer--content">
+                <p>
+                    tous droits reservés.
+                    <a href="">Mention légales</a>
+                </p>
+            </div>
+        </footer>
+        <script src= "../js/prism.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity = "sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin = "anonymous"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery-localScroll/1.4.0/jquery.localScroll.min.js"></script>
+        <script src = "../js/smoothScroll.js"></script>
+    </body>
+</html>
+

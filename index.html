@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Free CSS database">
+		<meta name="keywords" content="CSS">
+		<meta name="author" content="Pierre Laloy">
+		<meta name="author" content="Nicolas Kerkar">
+
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" href="css/commun.css">
+		<link rel="stylesheet" type="text/css" href="css/index-style.css">
+
+		<link rel="icon" href="http://www.scottace.com/img/css3-icon.png">
+		<title>CSS ShowCase</title>
+	</head>
+
+	<body>
+		<!-- HEADER -->
+		<header class="header" id="header--label">
+		  <h1 class="header--title">CSS Showcase</h1>
+		  <a class="header--button" href="html/doc.html">Get Started!</a>
+		</header>
+
+		<!-- ARTICLE ABOUT -->
+		<article class="about" id="about--label">
+			<div class="about--title-contener">
+				<h2 class="about--title-contener--title">A propos</h2>
+			</div>
+  			<p class="about--description">CSS Showcase is a tool bilt to follow you in your dayly life. A function, a doubt, it will become your favorite project partner where you being.</p>
+		</article>
+
+		<!-- ARTICLE HOWTOUSE -->
+		<article class="howToUse" id="howToUse--label">
+			<h2 class="howToUse--title">Aide</h2>
+			<div class="howToUse--contener-description">
+				<p class="howToUse--contener-description--p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</div>
+			<div class="howToUse--contener-video">
+	          <video controls src="/resources/howtouse.mp4" class="howToUse--contener-video--video" poster="/resources/howtouse.jpg"></video>
+	        </div>
+
+		</article>
+
+		<!-- NAV -->
+		<nav class="nav">
+
+		  <ul>
+			<li id="listGetStarted"><a href="#header--label"><i class="fa fa-rocket" aria-hidden="true"></i>Get Started</a></li>
+			<li id="listAPropos"><a href="#about--label"><i class="fa fa-info" aria-hidden="true"></i>A propos</a></li>
+			<li id="listAide"><a href="#howToUse--label"><i class="fa fa-question" aria-hidden="true"></i>Aide</a></li>
+			<li id="listChat"><a href="html/tchat.html"><i class="fa fa-comments" aria-hidden="true"></i>T'Chat</a></li>
+			<li id="user-indicator"><i class="fa fa-user" aria-hidden="true"></i></li>
+			<li class="be-log" id="be-log--father"><i class="fa fa-user" aria-hidden="true"></i><span id="be-log--username">UserName</span>
+				<ul>
+					<li id="logout" class="be-log"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</li>
+				</ul>
+			</li>
+		  </ul>
+		</nav>
+
+		<!-- SCROLL INDICATOR -->
+		<div class="scroll-indicator scroll-indicator--top"></div>
+		<div class="scroll-indicator scroll-indicator--bottom"></div>
+
+		<!-- LOGIN CONTENER -->
+		<div class="login">
+			<h1 class="login--title">Login</h1>
+			<form action="htbin/login.py" method="post">
+				<input class="login--field" id="username" type="text" name="username" value="" placeholder="Username">
+				<input class="login--field" id="password" type="password" name="userpwd" value="" placeholder="Passeword">
+				<div id="login-capsLock-indicator" class="login--capsLock-hidden"><img src="../resources/capslock.png" alt="CapsLock"></div>
+
+				<div class="login--contener-buttons">
+					<input class="login--button login--contener-buttons--login" type="submit" name="button" value="Login">
+					<button class="login--button login--contener-buttons--register" onclick="self.location.href='html/register.html'" type="button">Register</button>
+				</div>
+				<div class="login--exit"><span></span></div>
+			</form>
+			<a class="login--help" href="#">Lost your password?</a>
+		</div>
+
+		<!-- FOOTER -->
+		<footer class="footer">
+			<p>All right reserved</p>
+		</footer>
+
+		<!-- LOGIN INDICATOR -->
+		<div id="LoginIndicator">Ici</div>
+
+		<script type="text/javascript" src="js/scroll-indicator.js"></script>
+		<script type="text/javascript" src="js/capsLock.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript" src="js/ajaxLog.js"></script>
+		<script type="text/javascript" src="js/logout.js"></script>
+	</body>
+</html>

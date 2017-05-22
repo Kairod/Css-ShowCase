@@ -1,2 +1,1 @@
-# CSS-ShowCase
-First web site
+# CSSShowCase

@@ -1,0 +1,678 @@
+/* IMPORT FONT-FAMILY*/
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
+
+/* VARIABLES */
+ $height-nav : 60px;
+
+/* BILSE */
+#header--balise{
+    position: absolute;
+    top: 0;
+}
+
+#about--balise{
+    position: absolute;
+    top: 100vh;
+}
+
+#howToUse--balise{
+    position: absolute;
+    top: 200vh;
+}
+
+/* STYLE */
+.header
+{
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-image: url("../resources/index-header.jpg");
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+    &--title
+    {
+        color: white;
+
+        position: absolute;
+        top: 50vh;
+        width: 100%;
+        transform: translateY(-50%);
+        text-align: center;
+
+        font-family: Roboto,sans-serif;
+        font-size: 60px;
+        font-weight: bold;
+    }
+
+    &--button
+    {
+        position: absolute;
+        top: 50vh;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 140px;
+        height: 60px;
+        margin-top: 10%;
+
+        transition: all .3s;
+        transform: translateX(-50%) scale(1);
+        text-decoration: none;
+        line-height: 60px;
+        text-align: center;
+
+        color: white;
+        border: 3px solid white;
+        border-radius: 10px;
+
+        font-family: Pacifico, sans-serif;
+        font-size: 1.2em;
+
+        &:hover
+        {
+
+            transform: translateX(-50%) scale(1.2);
+
+            color: #a172d0;
+            background-color: white;
+        }
+    }
+}
+
+.scroll-indicator{
+    position: fixed;
+
+    //version grande
+    width: 100px;
+    height: 50px;
+
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    z-index: 2;
+
+    &:before{
+        position: absolute;
+        content: '';
+        height: 5px;
+        width: 40px;
+        background: white;
+        top: 50%;
+        left: 50%;
+        border-radius: 3px 3px 3px 3px;
+        transform: translateX(-88%) rotate(30deg);
+    }
+
+    &:after{
+        position: absolute;
+        content: '';
+        height: 5px;
+        width: 40px;
+        background: white;
+        top: 50%;
+        right: 50%;
+        border-radius: 3px 3px 3px 3px;
+        transform: translateX(88%) rotate(-30deg);
+    }
+
+    &--top{
+        display: block;
+        top: $height-nav+10px;
+        transform: translate(-50%) rotate(180deg);
+    }
+
+    &--bottom{
+        display: block;
+        bottom: 10px;
+    }
+
+    &--disabled{
+        display: none;
+    }
+}
+
+.nav
+{
+    position: fixed;
+    top: 0;
+
+    display: block;
+
+    width: 100%;
+    height: $height-nav;
+
+    text-align: right;
+
+    background-color: rgba(0,0,0,0.4);
+    padding-right: 5%;
+
+    & ul{
+        height: 100%;
+        margin: 0;
+
+        line-height: $height-nav;
+
+        li{
+            list-style: none;
+            display: inline-block;
+
+            text-align: center;
+            overflow: hidden;
+            color: white;
+
+            height: 100%;
+
+            a{
+                padding-right: 10px;
+                display: block;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                line-height: auto;
+
+                text-decoration: none;
+                color: inherit;
+                font-size: 18px;
+                font-family: Roboto, sans-serif;
+            }
+
+            & .fa{
+                padding: 0 10px 0 10px;
+                font-size: 25px;
+                color: inherit;
+            }
+
+            &:hover{
+                background-color: rgba(255,255,255,0.7);
+                color: black;
+            }
+        }
+    }
+}
+
+#user-indicator{
+    display: inline-block;
+    width: 60px;
+    cursor: pointer;
+
+    & .fa{
+        margin: 0;
+        display: block;
+        position: relative;
+        top: 15px;
+        color: inherit;
+    }
+
+ }
+
+
+
+ .be-log{
+     width: auto;
+     font-size: 18px;
+     text-decoration: none;
+     color: white;
+     font-family: Roboto, sans-serif;
+     padding: 0 10px 0 0;
+     cursor: pointer;
+
+     ul{
+         position: absolute;
+         display: none;
+         padding:0;
+     }
+     &:hover ul{
+         display: block;
+         height: inherit;
+         width: inherit;
+
+         li{
+             background-color: rgba(0,0,0,0.4);
+             &:hover{
+                 background-color: rgba(255,255,255,0.7);
+                 color: black;
+             }
+         }
+
+     }
+ }
+
+ #be-log--father{
+     display: none;
+ }
+
+ #logout{
+     display: none;
+ }
+
+.about
+{
+    position: absolute;
+    top: 100vh;
+
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 100vh;
+
+    background: linear-gradient( #639, #a172d0);
+    //background-color: #527ddb;
+
+    flex-wrap: wrap;
+
+    &--title-contener
+    {
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        text-align: center;
+
+        &--title{
+            position: relative;
+            margin: 0;
+            color: black;
+            font-family: Roboto, sans-serif;
+            font-size: 60px;
+
+            width: 80%;
+            height: 240px;
+            top :45%;
+            transform: translateY(-50%);
+            margin: 0 auto;
+            padding-top: 65px;
+
+            background-image: url("../resources/about-img.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+    }
+
+    &--description
+    {
+        width: 50%;
+        text-align: left;
+        padding-right: 15%;
+        margin: auto;
+
+        color: white;
+        font-family: Roboto, sans-serif;
+        font-size: 24px;
+        min-width: 300px;
+    }
+
+}
+
+
+.howToUse
+{
+    position: absolute;
+    top: 200vh;
+    display: inline-flex;
+    width: 100%;
+    height: 100vh;
+    flex-wrap: wrap;
+    align-content: center;
+
+    background-color: #3ebbe9;
+
+    &--title
+    {
+        width: 50%;
+        min-width: 300px;
+        text-align: center;
+        padding: 2% 0;
+        margin: 20px auto;
+
+        color: black;
+        font-family: Roboto, sans-serif;
+        font-size: 60px;
+        font-weight: bold;
+    }
+
+    &--contener-description{
+
+        margin-bottom: 50px;
+        &--p
+        {
+            width: 50%;
+            text-align: left;
+            padding-right: 5%;
+
+            margin: auto;
+
+            color: white;
+
+            font-family: Roboto, sans-serif;
+            font-size: 24px;
+            min-width: 300px;
+        }
+    }
+
+    &--contener-video{
+        height: 300px;
+        margin: 0 auto;
+
+        &--video{
+            height: 100%;
+            width: auto;
+        }
+    }
+
+}
+
+#login-capsLock-indicator{
+    position: absolute;
+    top: 185px;
+    right: 20px;
+    height: 25px;
+    width: 20px;
+    & img{
+        height: 100%;
+        width: auto;
+        filter: brightness(0.5);
+    }
+
+}
+
+.login{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 350px;
+    transform: translate(-50%, -50%) scale(1);
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 3px 3px 4px 2px rgba(0,0,0,0.2);
+
+    &--title{
+        position: relative;
+        height: 100px;
+        line-height: 100px;
+        font-size: 300%;
+        color: #28a5d2;
+        font-family: Roboto, sans-serif;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    &--field{
+        //les deux champs input
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 40px;
+        top: 0;
+        margin: 3% 0;
+    }
+    #username{
+        background-image: url("http://cssdeck.com/uploads/media/items/8/8bcLQqF.png");
+        background-repeat: no-repeat;
+        background-position-x: 1%;
+        background-position-y: -5%;
+        padding-left: 30px;
+    }
+
+    #password{
+        background-image: url("http://cssdeck.com/uploads/media/items/8/8bcLQqF.png");
+        background-repeat: no-repeat;
+        background-position-x: 1%;
+        background-position-y: 46%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    &--capsLock-visible{
+        display: block;
+    }
+
+    &--capsLock-hidden{
+        display: none;
+    }
+
+    &--button{
+        //style de base pour les deux boutton login et register
+        width: 100px;
+        height: 50px;
+        background-color: #28a5d2;
+        border: none;
+        color: white;
+
+        font-family: Pacifico, sans-serif;
+        font-size: 1.3em;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+
+    &--contener-buttons{
+        position: relative;
+        display: inline-block;
+        top: 10px;
+        width: 100%;
+        word-spacing: 30px;
+        text-align: center;
+
+        &--login{
+            cursor: pointer;
+        }
+
+        &--register{
+            text-decoration: none;
+        }
+    }
+
+    &--help{
+        position: relative;
+        top: 30px;
+        text-align: center;
+    }
+
+    &--exit{
+        position: absolute;
+        display: block;
+        top: 10px;
+        right: 15px;
+
+        font-size: 36px;
+        cursor: pointer;
+
+        & span{
+            display: block;
+            height: 30px;
+            width: 30px;
+
+            &:before{
+                position: absolute;
+                content: '';
+                height: 4px;
+                width: 30px;
+                background: red;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) rotate(45deg);
+            }
+
+            &:after{
+                position: absolute;
+                content: '';
+                height: 4px;
+                width: 30px;
+                background: red;
+                top: 50%;
+                right: 50%;
+                transform: translateX(50%) rotate(-45deg);
+            }
+        }
+    }
+}
+
+
+.footer{
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top : 300vh;
+    background-color: black;
+    padding-left: 20px;
+
+    & p{
+        font-family: Roboto, sans-serif;
+        color: white;
+        margin: 0;
+        line-height: 50px;
+    }
+
+}
+
+
+#LoginIndicator{
+
+  position: fixed;
+  top: 90px;
+  left: -100%;
+
+  height: 100px;
+  padding: 0 20px;
+
+  transition: all 0.3s;
+  text-align: center;
+
+  color: #FFF;
+  background-color: #28a5d2;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.4);
+
+  font-size: 20px;
+  line-height: 100px;
+}
+
+
+@media screen and (max-width: 1280px){
+
+    .header{
+        position: relative;
+        top: 0;
+        box-sizing: padding-box;
+        padding: 250px 0;
+        height: 800px;
+
+        &--title{
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &--button{
+            position: absolute;
+            top: 50%;
+        }
+    }
+
+    .about {
+        position: relative;
+        top: 0;
+        box-sizing: padding-box;
+        padding: 250px 0;
+        height: auto;
+
+        flex-direction: column;
+        &--title-contener{
+            height: 50%;
+            width: 100%;
+        }
+        &--description{
+            width: 100%;
+            padding: 0 20%;
+        }
+    }
+
+    .howToUse{
+        position: relative;
+        top: 0;
+        box-sizing: padding-box;
+        padding: 250px 0;
+        height: auto;
+    }
+
+    .footer{
+        position: relative;
+        top: 0px;
+        height: 40px;
+
+        & p{
+            margin: 0;
+            padding: 0;
+            line-height: 40px;
+        }
+    }
+
+    .login{
+        position: fixed;
+        margin: 0;
+        top: 50vh;
+        left: 50vw;
+        transform: scale(2.2) translate(-25%, -22%);
+    }
+
+    .nav{
+        height: 90px;
+        text-align: center;
+
+        & ul{
+
+        }
+
+        & ul li{
+            a{
+                font-size: 36px;
+            }
+            & .fa{
+                font-size: 50px;
+            }
+        }
+    }
+
+    #listAPropos{
+        display: none;
+    }
+
+    #listAide{
+        display: none;
+    }
+
+    .be-log{
+        padding: 13px 10px 0 0;
+        font-size: 36px;
+
+        &:hover ul{
+            top: 90px;
+        }
+    }
+
+    .scroll-indicator{
+        &--top{
+            top : 100px;
+        }
+        &--bottom{
+            bottom: 15px;
+        }
+    }
+}
